@@ -35,9 +35,10 @@ class rmi extends Command
             $mimeType = File::mimeType($file);
 
             if (!str_contains($sqlFileContent, $fileName) && str_contains($mimeType, 'image')) {
-                File::delete(public_path($file));
+                File::delete(($file));
                 $this->info("Deleted: $fileName");
             }
         }
     }
 }
+
